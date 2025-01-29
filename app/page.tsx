@@ -69,7 +69,7 @@ function LawFirmLanding() {
   ]
 
   return (
-    <div className={`min-h-screen ${isDarkMode ? "bg-[#192525] text-white" : "bg-[#ebcbbb] text-[#87734d]"}`}>
+    <div className={`min-h-screen ${isDarkMode ? "bg-[#192525] text-[#c8a482]" : "bg-[#ebcbbb] text-[#87734d]"}`}>
       <Navbar />
       {/* Hero Section */}
       <section id="inicio" className="relative h-[80vh] flex items-center justify-center pt-16">
@@ -157,7 +157,7 @@ function LawFirmLanding() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {services.map((service, index) => (
               <FadeInSection key={service.title} delay={index * 200}>
-                <div className={`p-6 rounded-lg shadow-md h-full ${isDarkMode ? "bg-[#0f191b]" : "bg-white"}`}>
+                <div className={`p-6 rounded-xl shadow-md h-full overflow-hidden ${isDarkMode ? "bg-[#0f191b]" : "bg-white"} transition-transform duration-300 transform hover:scale-105`}>
                   <h3 className="text-xl font-semibold mb-4">{service.title}</h3>
                   <p className={isDarkMode ? "text-gray-300" : "text-gray-700"}>{service.description}</p>
                 </div>
@@ -190,7 +190,7 @@ function LawFirmLanding() {
                     {testimonials.slice(startIndex, startIndex + 2).map((testimonial, index) => (
                       <div
                         key={index}
-                        className={`p-6 rounded-lg shadow-md ${isDarkMode ? "bg-[#192525]" : "bg-[#F5F0EB]"}`}
+                        className={`p-6 rounded-xl shadow-md ${isDarkMode ? "bg-[#273636]" : "bg-[#F5F0EB]"}`}
                         style={{ minHeight: "180px" }}
                       >
                         <p className={`mb-4 ${isDarkMode ? "text-gray-300" : "text-gray-700"} italic`}>

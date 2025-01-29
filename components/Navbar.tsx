@@ -25,12 +25,12 @@ export default function Navbar() {
 
     return (
         <nav
-            className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? (isDarkMode ? "bg-gray-900/90" : "bg-white/90") : "bg-white/25"
+            className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? (isDarkMode ? "bg-[#0f191b]/90" : "bg-white/90") : "bg-white/25"
                 } ${isDarkMode ? "text-white" : "text-gray-800"}`}
         >
             <div className="container mx-auto px-4">
                 <div className="flex justify-between items-center py-4">
-                    <div className="text-2xl font-bold" style={{ color: "#C19B22" }}>
+                    <div className="text-2xl font-bold" style={{ color: "#c8a482" }}>
                         Pozzatto y Pezzuti Asoc.
                     </div>
                     <div className="hidden md:flex space-x-8" style={{ fontSize: "1.10rem", fontWeight: "700" }}>

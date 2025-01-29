@@ -1,101 +1,313 @@
-import Image from "next/image";
+"use client"
 
-export default function Home() {
+import Image from "next/image"
+import { Button } from "@/components/ui/button"
+import Navbar from "@/components/Navbar"
+import { ThemeProvider, useTheme } from "@/contexts/ThemeContext"
+import SocialIcons from "@/components/SocialIcons"
+import { Carousel, CarouselContent, CarouselItem, CarouselDots } from "@/components/ui/carousel"
+import Autoplay from "embla-carousel-autoplay"
+import { FadeInSection } from "@/components/FadeInSection"
+
+function LawFirmLanding() {
+  const { isDarkMode } = useTheme()
+
+  const testimonials = [
+    {
+      name: "Carlos Mendoza",
+      role: "CEO, Inversores S.A.",
+      text: "Veronica y Alejandra han sido fundamental en el crecimiento de nuestra empresa. Su asesoramiento y profesionalismo han sido invaluable. Siempre están disponibles para responder nuestras preguntas y nos han guiado a través de complejas situaciones legales con gran experticia.",
+    },
+    {
+      name: "Laura Blanco",
+      role: "Directora, Grupo Financiero",
+      text: "La atención al detalle y el compromiso de Pozzatto y Pezzuti son incomparables. Altamente recomendadas. Su conocimiento profundo del sector financiero nos ha permitido navegar con confianza por las complejidades regulatorias de nuestro negocio.",
+    },
+    {
+      name: "Martín Gómez",
+      role: "Fundador, Grupo Inmobiliario",
+      text: "Su experiencia en derecho corporativo nos ayudó a navegar complejas negociaciones con inversionistas. Excelente servicio. Veronica y Alejandra no solo entienden las leyes, sino también las necesidades únicas de las startups tecnológicas.",
+    },
+    {
+      name: "Jose Rodríguez",
+      role: "Gerente de Operaciones",
+      text: "Pozzatto y Pezzuti nos brindó un apoyo crucial en temas de cumplimiento normativo. Su enfoque proactivo marcó la diferencia. Nos han ayudado a implementar políticas y procedimientos que no solo cumplen con la ley, sino que también mejoran nuestra eficiencia operativa.",
+    },
+  ]
+
+  const services = [
+    {
+      title: "Derecho Corporativo",
+      description:
+        "Ofrecemos asesoramiento legal experto y soluciones personalizadas para proteger sus intereses y maximizar sus oportunidades en el ámbito corporativo.",
+    },
+    {
+      title: "Litigios Complejos",
+      description:
+        "Nuestro equipo de abogados especializados maneja casos de alta complejidad, asegurando la mejor defensa de sus intereses en situaciones legales desafiantes.",
+    },
+    {
+      title: "Fusiones y Adquisiciones",
+      description:
+        "Guiamos a nuestros clientes a través de complejas transacciones comerciales, asegurando un proceso fluido y protegiendo sus intereses en cada etapa.",
+    },
+    {
+      title: "Derecho Laboral",
+      description:
+        "Brindamos asesoramiento integral en materia laboral, ayudando a empleadores y empleados a navegar las complejidades de las leyes laborales y resolver conflictos de manera eficiente.",
+    },
+    {
+      title: "Propiedad Intelectual",
+      description:
+        "Protegemos los activos intangibles de nuestros clientes, incluyendo patentes, marcas y derechos de autor, asegurando su valor y competitividad en el mercado.",
+    },
+    {
+      title: "Derecho Inmobiliario",
+      description:
+        "Brindamos asesoramiento integral en Derecho Inmobiliario, protegiendo y gestionando los activos inmobiliarios de nuestros clientes, asegurando su valor y seguridad jurídica en cada transacción.",
+    },
+  ]
+
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
+    <div className={`min-h-screen ${isDarkMode ? "bg-gray-900 text-white" : "bg-[#ebcbbb] text-[#87734d]"}`}>
+      <Navbar />
+      {/* Hero Section */}
+      <section id="inicio" className="relative h-[80vh] flex items-center justify-center pt-16">
         <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
+          src="https://img.freepik.com/fotos-premium/juez-gavel-abogados-justicia-que-tienen-reunion-equipo-bufete-abogados-conceptos-derecho-servicios-juridicos_265022-65156.jpg?semt=ais_hybrid"
+          alt="Elegant office interior"
+          layout="fill"
+          objectFit="cover"
+          className="absolute z-0"
         />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              app/page.tsx
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
-
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+        <div className="relative z-10 text-center text-white">
+          <h1 className="text-5xl font-bold mb-4">Pozzatto y Pezzuti Asociados</h1>
+          <p className="text-xl mb-8">Excelencia legal con un toque personal</p>
+          <Button
+            className="bg-[#D4AF37] hover:bg-[#C19B22] text-white"
+            onClick={() => {
+              const contactSection = document.getElementById("contacto")
+              contactSection?.scrollIntoView({ behavior: "smooth" })
+            }}
           >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+            Contactanos
+          </Button>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
+      </section>
+
+      {/* About Us Section */}
+      <section id="acerca-de" className={`py-20 ${isDarkMode ? "bg-gray-800" : "bg-white"}`}>
+        <div className="container mx-auto px-4">
+          <h2 className="text-4xl font-bold text-center mb-12">Acerca de Nosotras</h2>
+          <div className="flex flex-col md:flex-row items-center justify-between">
+            <div className="md:w-1/2 mb-8 md:mb-0 flex justify-center">
+              <Image
+                src="/images/logo2.png"
+                alt="VA Gestiones Judiciales Logo"
+                width={550}
+                height={550}
+                className="rounded-lg shadow-lg"
+                priority
+              />
+            </div>
+            <div className="md:w-1/2 md:pl-12">
+              <p className={`mb-6 ${isDarkMode ? "text-gray-300" : "text-gray-700"}`}>
+                Con más de 15 años de experiencia combinada, Pozzatto y Pezzuti Asoc.
+                se ha consolidado como un referente en el ámbito legal, brindando asesoramiento y representación de alta calidad a personas y empresas.
+                Nuestro compromiso con la excelencia y la ética profesional nos distingue, permitiéndonos abordar cada caso con un enfoque personalizado y estratégico.
+              </p>
+              <p className={`mb-6 ${isDarkMode ? "text-gray-300" : "text-gray-700"}`}>
+                Nos dedicamos a entender las necesidades específicas de nuestros clientes para ofrecer soluciones legales eficaces, adaptadas a cada situación.
+                La confianza que hemos construido a lo largo de los años es el resultado de nuestra pasión por la justicia y nuestro firme compromiso con la defensa
+                de los derechos e intereses de quienes nos eligen.
+              </p>
+              <div className="flex justify-center space-x-8">
+                <div className="text-center">
+                  <Image
+                    src="https://i.pinimg.com/474x/9c/dd/9e/9cdd9e3ff185158ae4d4cfcf39060859.jpg"
+                    alt="Veronica Pozzatto"
+                    width={150}
+                    height={150}
+                    className="rounded-full mb-4"
+                  />
+                  <h3 className="font-semibold">Veronica Pozzatto</h3>
+                  <p className="text-[#cd8059]">Socia Fundadora</p>
+                </div>
+                <div className="text-center">
+                  <Image
+                    src="https://www.molinarifoto.com.ar/wp-content/uploads/2017/10/Foto-para-perfil-Linkedin.jpg"
+                    alt="Alejandra Pezzuti"
+                    width={150}
+                    height={150}
+                    className="rounded-full mb-4"
+                  />
+                  <h3 className="font-semibold">Alejandra Pezzuti</h3>
+                  <p className="text-[#cd8059]">Socia Fundadora</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Services Section */}
+      <section id="servicios" className="py-20">
+        <div className="container mx-auto px-4">
+          <h2 className="text-4xl font-bold text-center mb-12">Nuestros Servicios</h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {services.map((service, index) => (
+              <FadeInSection key={service.title} delay={index * 200}>
+                <div className={`p-6 rounded-lg shadow-md h-full ${isDarkMode ? "bg-gray-800" : "bg-white"}`}>
+                  <h3 className="text-xl font-semibold mb-4">{service.title}</h3>
+                  <p className={isDarkMode ? "text-gray-300" : "text-gray-700"}>{service.description}</p>
+                </div>
+              </FadeInSection>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Testimonials Section */}
+      <section id="testimonios" className={`py-20 ${isDarkMode ? "bg-gray-800" : "bg-white"}`}>
+        <div className="container mx-auto px-4">
+          <h2 className="text-4xl font-bold text-center mb-12">Testimonios</h2>
+          <Carousel
+            className="w-full mx-auto"
+            opts={{
+              align: "start",
+              loop: true,
+            }}
+            plugins={[
+              Autoplay({
+                delay: 5000,
+              }),
+            ]}
+          >
+            <CarouselContent>
+              {[0, 2].map((startIndex) => (
+                <CarouselItem key={startIndex} className="md:basis-full lg:basis-full">
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    {testimonials.slice(startIndex, startIndex + 2).map((testimonial, index) => (
+                      <div
+                        key={index}
+                        className={`p-6 rounded-lg shadow-md ${isDarkMode ? "bg-gray-700" : "bg-[#F5F0EB]"}`}
+                        style={{ minHeight: "180px" }}
+                      >
+                        <p className={`mb-4 ${isDarkMode ? "text-gray-300" : "text-gray-700"} italic`}>
+                          &quot;{testimonial.text}&quot;
+                        </p>
+                        <div className="flex items-center">
+                          <div>
+                            <h4 className="font-semibold ">{testimonial.name}</h4>
+                            <p className="text-[#cd8059]">{testimonial.role}</p>
+                          </div>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </CarouselItem>
+              ))}
+            </CarouselContent>
+            <CarouselDots />
+          </Carousel>
+        </div>
+      </section>
+
+      {/* Contact Section */}
+      <section id="contacto" className="py-20">
+        <div className="container mx-auto px-4">
+          <h2 className="text-4xl font-bold text-center mb-12">Contáctenos</h2>
+          <div className="max-w-lg mx-auto">
+            <form className="space-y-6">
+              <div>
+                <label
+                  htmlFor="name"
+                  className={`block text-sm font-medium ${isDarkMode ? "text-gray-300" : "text-gray-700"}`}
+                >
+                  Nombre
+                </label>
+                <input
+                  type="text"
+                  id="name"
+                  name="name"
+                  className={`mt-1 block w-full rounded-md shadow-sm focus:ring focus:ring-opacity-50 ${isDarkMode
+                    ? "bg-gray-700 border-gray-600 text-white focus:border-[#D4AF37] focus:ring-[#D4AF37]"
+                    : "bg-white border-gray-300 text-gray-900 focus:border-[#D4AF37] focus:ring-[#D4AF37]"
+                    }`}
+                />
+              </div>
+              <div>
+                <label
+                  htmlFor="email"
+                  className={`block text-sm font-medium ${isDarkMode ? "text-gray-300" : "text-gray-700"}`}
+                >
+                  Email
+                </label>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  className={`mt-1 block w-full rounded-md shadow-sm focus:ring focus:ring-opacity-50 ${isDarkMode
+                    ? "bg-gray-700 border-gray-600 text-white focus:border-[#D4AF37] focus:ring-[#D4AF37]"
+                    : "bg-white border-gray-300 text-gray-900 focus:border-[#D4AF37] focus:ring-[#D4AF37]"
+                    }`}
+                />
+              </div>
+              <div>
+                <label
+                  htmlFor="message"
+                  className={`block text-sm font-medium ${isDarkMode ? "text-gray-300" : "text-gray-700"}`}
+                >
+                  Mensaje
+                </label>
+                <textarea
+                  id="message"
+                  name="message"
+                  rows={4}
+                  className={`mt-1 block w-full rounded-md shadow-sm focus:ring focus:ring-opacity-50 ${isDarkMode
+                    ? "bg-gray-700 border-gray-600 text-white focus:border-[#D4AF37] focus:ring-[#D4AF37]"
+                    : "bg-white border-gray-300 text-gray-900 focus:border-[#D4AF37] focus:ring-[#D4AF37]"
+                    }`}
+                ></textarea>
+              </div>
+              <div>
+                <Button type="submit" className="w-full bg-[#D4AF37] hover:bg-[#C19B22] text-white">
+                  Enviar Mensaje
+                </Button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </section>
+
+      {/* Footer */}
+      <footer className={`py-8 ${isDarkMode ? "bg-gray-800" : "bg-[#F5F0EB]"} text-grey`}>
+        <div className="container mx-auto px-4 flex flex-col items-center">
+          <SocialIcons />
+          <p className="mt-4">&copy; 2025 Pozzatto y Pezzuti Asoc. Todos los derechos reservados.</p>
+          <p className="text-[#D4AF37] ">
+            Design by{" "}
+            <a
+              href="https://tuempresa.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-[#D4AF37] hover:underline"
+            >
+              V
+            </a>
+            .
+          </p>
+        </div>
       </footer>
     </div>
-  );
+  )
 }
+
+export default function App() {
+  return (
+    <ThemeProvider>
+      <LawFirmLanding />
+    </ThemeProvider>
+  )
+}
+

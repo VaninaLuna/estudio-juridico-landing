@@ -25,7 +25,8 @@ export default function Navbar() {
 
     return (
         <nav
-            className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? (isDarkMode ? "bg-[#0f191b]/90" : "bg-white/90") : "bg-white/25"
+            className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? (isDarkMode ? "bg-[#0f191b]/90" : "bg-white/90") :
+                isDarkMode ? "bg-[#0f191b]/90" : "bg-white/40"
                 } ${isDarkMode ? "text-white" : "text-gray-800"}`}
         >
             <div className="container mx-auto px-4">

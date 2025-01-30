@@ -69,6 +69,7 @@ function LawFirmLanding() {
   ]
 
   return (
+    //letra de los textos y bg de nuestros servicios y contactanos  dark      --            claro
     <div className={`min-h-screen ${isDarkMode ? "bg-[#192525] text-[#c8a482]" : "bg-[#ebcbbb] text-[#87734d]"}`}>
       <Navbar />
       {/* Hero Section */}
@@ -84,7 +85,7 @@ function LawFirmLanding() {
           <h1 className="text-5xl font-bold mb-4">Pozzatto y Pezzuti Asociados</h1>
           <p className="text-xl mb-8">Excelencia legal con un toque personal</p>
           <Button
-            className="bg-[#c8a482] hover:bg-[#C19B22] text-white"
+            className="bg-[#c8a482] hover:bg-[#C19B22] text-white rounded-xl"
             onClick={() => {
               const contactSection = document.getElementById("contacto")
               contactSection?.scrollIntoView({ behavior: "smooth" })
@@ -106,7 +107,7 @@ function LawFirmLanding() {
                 alt="VA Gestiones Judiciales Logo"
                 width={550}
                 height={550}
-                className="rounded-lg shadow-lg"
+                className="rounded-xl shadow-lg"
                 priority
               />
             </div>
@@ -157,8 +158,12 @@ function LawFirmLanding() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {services.map((service, index) => (
               <FadeInSection key={service.title} delay={index * 200}>
+
+                {/* //color del bg tarjetas servicios */}
                 <div className={`p-6 rounded-xl shadow-md h-full overflow-hidden ${isDarkMode ? "bg-[#0f191b]" : "bg-white"} transition-transform duration-300 transform hover:scale-105`}>
                   <h3 className="text-xl font-semibold mb-4">{service.title}</h3>
+
+                  {/* //color del texto de los servicios */}
                   <p className={isDarkMode ? "text-gray-300" : "text-gray-700"}>{service.description}</p>
                 </div>
               </FadeInSection>
@@ -168,6 +173,8 @@ function LawFirmLanding() {
       </section>
 
       {/* Testimonials Section */}
+
+      {/* color del bg de los testimonios */}
       <section id="testimonios" className={`py-20 ${isDarkMode ? "bg-[#0f191b]" : "bg-white"}`}>
         <div className="container mx-auto px-4">
           <h2 className="text-4xl font-bold text-center mb-12">Testimonios</h2>
@@ -190,9 +197,12 @@ function LawFirmLanding() {
                     {testimonials.slice(startIndex, startIndex + 2).map((testimonial, index) => (
                       <div
                         key={index}
+
+                        //bg de las tarjetas testimonios
                         className={`p-6 rounded-xl shadow-md ${isDarkMode ? "bg-[#273636]" : "bg-[#F5F0EB]"}`}
                         style={{ minHeight: "180px" }}
                       >
+                        {/* //color del texto de los testimonios */}
                         <p className={`mb-4 ${isDarkMode ? "text-gray-300" : "text-gray-700"} italic`}>
                           &quot;{testimonial.text}&quot;
                         </p>
@@ -222,6 +232,7 @@ function LawFirmLanding() {
               <div>
                 <label
                   htmlFor="name"
+                  //color del texto de los inputs
                   className={`block text-sm font-medium ${isDarkMode ? "text-gray-300" : "text-gray-700"}`}
                 >
                   Nombre
@@ -230,7 +241,8 @@ function LawFirmLanding() {
                   type="text"
                   id="name"
                   name="name"
-                  className={`mt-1 block w-full rounded-md shadow-sm focus:ring focus:ring-opacity-50 bg-white ${isDarkMode
+                  //color de los inputs
+                  className={`mt-1 block w-full rounded-xl shadow-sm focus:ring focus:ring-opacity-50 bg-white ${isDarkMode
                     ? "border-gray-600 text-white focus:border-[#D4AF37] focus:ring-[#D4AF37]"
                     : "border-gray-300 text-gray-900 focus:border-[#D4AF37] focus:ring-[#D4AF37]"
                     }`}
@@ -247,7 +259,7 @@ function LawFirmLanding() {
                   type="email"
                   id="email"
                   name="email"
-                  className={`mt-1 block w-full rounded-md shadow-sm focus:ring focus:ring-opacity-50 bg-white ${isDarkMode
+                  className={`mt-1 block w-full rounded-xl shadow-sm focus:ring focus:ring-opacity-50 bg-white ${isDarkMode
                     ? "border-gray-600 text-white focus:border-[#D4AF37] focus:ring-[#D4AF37]"
                     : "border-gray-300 text-gray-900 focus:border-[#D4AF37] focus:ring-[#D4AF37]"
                     }`}
@@ -264,14 +276,14 @@ function LawFirmLanding() {
                   id="message"
                   name="message"
                   rows={4}
-                  className={`mt-1 block w-full rounded-md shadow-sm focus:ring focus:ring-opacity-50 bg-white${isDarkMode
+                  className={`mt-1 block w-full rounded-xl shadow-sm focus:ring focus:ring-opacity-50 bg-white${isDarkMode
                     ? "border-gray-600 text-white focus:border-[#D4AF37] focus:ring-[#D4AF37]"
                     : "border-gray-300 text-gray-900 focus:border-[#D4AF37] focus:ring-[#D4AF37]"
                     }`}
                 ></textarea>
               </div>
               <div>
-                <Button type="submit" className="w-full bg-[#c8a482] hover:bg-[#C19B22] text-white">
+                <Button type="submit" className="w-full bg-[#c8a482] hover:bg-[#C19B22] text-white rounded-xl">
                   Enviar Mensaje
                 </Button>
               </div>
@@ -281,6 +293,7 @@ function LawFirmLanding() {
       </section>
 
       {/* Footer */}
+      {/* //bg del footer */}
       <footer className={`py-8 ${isDarkMode ? "bg-[#0f191b]" : "bg-[#F5F0EB]"} text-grey`}>
         <div className="container mx-auto px-4 flex flex-col items-center">
           <SocialIcons />

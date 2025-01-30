@@ -243,9 +243,9 @@ function LawFirmLanding() {
                   name="name"
                   //color de los inputs
                   className={`mt-1 block w-full rounded-xl shadow-sm focus:ring focus:ring-opacity-50 bg-white ${isDarkMode
-                    ? "border-gray-600 text-white focus:border-[#D4AF37] focus:ring-[#D4AF37]"
+                    ? "border-gray-600 text-gray-900 focus:border-[#D4AF37] focus:ring-[#D4AF37]"
                     : "border-gray-300 text-gray-900 focus:border-[#D4AF37] focus:ring-[#D4AF37]"
-                    }`}
+                    } px-2 py-2 text-sm leading-tight `}
                 />
               </div>
               <div>
@@ -260,9 +260,9 @@ function LawFirmLanding() {
                   id="email"
                   name="email"
                   className={`mt-1 block w-full rounded-xl shadow-sm focus:ring focus:ring-opacity-50 bg-white ${isDarkMode
-                    ? "border-gray-600 text-white focus:border-[#D4AF37] focus:ring-[#D4AF37]"
+                    ? "border-gray-600 text-gray-900 focus:border-[#D4AF37] focus:ring-[#D4AF37]"
                     : "border-gray-300 text-gray-900 focus:border-[#D4AF37] focus:ring-[#D4AF37]"
-                    }`}
+                    } px-2 py-2 text-sm leading-tight`}
                 />
               </div>
               <div>
@@ -277,9 +277,9 @@ function LawFirmLanding() {
                   name="message"
                   rows={4}
                   className={`mt-1 block w-full rounded-xl shadow-sm focus:ring focus:ring-opacity-50 bg-white${isDarkMode
-                    ? "border-gray-600 text-white focus:border-[#D4AF37] focus:ring-[#D4AF37]"
+                    ? "border-gray-600 text-gray-900 focus:border-[#D4AF37] focus:ring-[#D4AF37]"
                     : "border-gray-300 text-gray-900 focus:border-[#D4AF37] focus:ring-[#D4AF37]"
-                    }`}
+                    } px-2 py-2 text-sm leading-tight `}
                 ></textarea>
               </div>
               <div>

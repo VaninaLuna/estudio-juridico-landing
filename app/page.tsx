@@ -107,7 +107,7 @@ function LawFirmLanding() {
                 alt="VA Gestiones Judiciales Logo"
                 width={550}
                 height={550}
-                className="rounded-xl shadow-lg"
+                className="rounded-xl shadow-xl"
                 priority
               />
             </div>

@@ -82,8 +82,9 @@ function LawFirmLanding() {
           className="absolute z-0"
         />
         <div className="relative z-10 text-center text-white">
-          <h1 className="text-5xl font-bold mb-4">Pozzatto y Pezzuti Asociados</h1>
+          <h1 className="text-5xl font-bold mb-4">Pozzatto y Pezzutti Asociados</h1>
           <p className="text-xl mb-8">Excelencia legal con un toque personal</p>
+          {/* <h5 className="text-xl mb-8">9 de Julio 672. PA. OF 8 </h5> */}
           <Button
             className="bg-[#c8a482] hover:bg-[#C19B22] text-white rounded-xl"
             onClick={() => {
@@ -113,7 +114,7 @@ function LawFirmLanding() {
             </div>
             <div className="md:w-1/2 md:pl-12">
               <p className={`mb-6 ${isDarkMode ? "text-gray-300" : "text-gray-700"}`}>
-                Con más de 15 años de experiencia combinada, Pozzatto y Pezzuti Asoc.
+                Con más de 15 años de experiencia combinada, Pozzatto y Pezzutti Asoc.
                 se ha consolidado como un referente en el ámbito legal, brindando asesoramiento y representación de alta calidad a personas y empresas.
                 Nuestro compromiso con la excelencia y la ética profesional nos distingue, permitiéndonos abordar cada caso con un enfoque personalizado y estratégico.
               </p>
@@ -142,7 +143,7 @@ function LawFirmLanding() {
                     height={150}
                     className="rounded-full mb-4"
                   />
-                  <h3 className="font-semibold">Alejandra Pezzuti</h3>
+                  <h3 className="font-semibold">Alejandra Pezzutti</h3>
                   <p className="text-[#cd8059]">Socia Fundadora</p>
                 </div>
               </div>
@@ -297,7 +298,7 @@ function LawFirmLanding() {
       <footer className={`py-8 ${isDarkMode ? "bg-[#0f191b]" : "bg-[#F5F0EB]"} text-grey`}>
         <div className="container mx-auto px-4 flex flex-col items-center">
           <SocialIcons />
-          <p className="mt-4">&copy; 2025 Pozzatto y Pezzuti Asoc. Todos los derechos reservados.</p>
+          <p className="mt-4">&copy; 2025 Pozzatto y Pezzutti Asoc. Todos los derechos reservados.</p>
           <p className="text-[#D4AF37] ">
             Design by{" "}
             <a

@@ -175,7 +175,7 @@ function LawFirmLanding() {
       </section >
 
       {/* Services Section */}
-      < section id="servicios" className={`py-20 ${isDarkMode ? "bg-[#0f191b]" : "bg-[#f2ddd0]"}`} >
+      < section id="servicios" className={`py-20 ${isDarkMode ? "bg-[#202e30]" : "bg-[#f2ddd0]"}`} >
         <div className="container mx-auto px-4">
           <h2 className="text-4xl font-bold text-center mb-12">Nuestros Servicios</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">

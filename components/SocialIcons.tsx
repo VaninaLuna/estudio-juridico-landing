@@ -16,7 +16,7 @@ export default function SocialIcons() {
                 <LinkedIn />
             </a>
             <a
-                href="https://www.instagram.com/garcia.rodriguez.abogadas"
+                href="https://www.instagram.com/estudio.juridico.mendoza/?igsh=MTBiZzQ3eHV1d2kyaA%3D%3D#"
                 target="_blank"
                 rel="noopener noreferrer"
                 className={`text-2xl ${isDarkMode ? "text-white hover:text-[#D4AF37]" : "text-gray-800 hover:text-[#D4AF37]"}`}

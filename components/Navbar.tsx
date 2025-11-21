@@ -31,11 +31,11 @@ export default function Navbar() {
         >
             <div className="container mx-auto px-4">
                 <div className="flex justify-between items-center py-4">
-                    <div className="text-2xl font-bold" style={{ color: "#c8a482" }}>
+                    <div className="text-2xl font-bold" style={{ color: "#e0ae94" }}>
                         Pozzatto y Pezzutti Asoc.
                     </div>
                     <div className="hidden md:flex space-x-8" style={{ fontSize: "1.10rem", fontWeight: "700" }}>
-                        {["Inicio", "Acerca de", "Servicios", "Testimonios", "Contacto"].map((item) => (
+                        {["Inicio", "Acerca de", "Servicios", "Como trabajamos", "Contacto"].map((item) => (
                             <a
                                 key={item}
                                 href={`#${item.toLowerCase().replace(" ", "-")}`}

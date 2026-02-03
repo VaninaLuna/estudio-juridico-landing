@@ -27,19 +27,19 @@ export default function Navbar() {
         <nav
             className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? (isDarkMode ? "bg-[#0f191b]/90" : "bg-white/90") :
                 isDarkMode ? "bg-[#0f191b]/90" : "bg-white/40"
-                } ${isDarkMode ? "text-white" : "text-gray-800"}`}
+                } ${isDarkMode ? "text-white" : "text-[#4a4035]"}`}
         >
             <div className="container mx-auto px-4">
                 <div className="flex justify-between items-center py-4">
-                    <div className="text-2xl font-bold" style={{ color: "#e0ae94" }}>
+                    <div className={`text-2xl font-bold ${isDarkMode ? "text-[#e0ae94]" : "text-[#4a4035]"}`}>
                         Pozzatto y Pezzutti Asoc.
                     </div>
                     <div className="hidden md:flex space-x-8" style={{ fontSize: "1.10rem", fontWeight: "700" }}>
                         {["Inicio", "Acerca de", "Servicios", "Como trabajamos", "Contacto"].map((item) => (
                             <a
                                 key={item}
-                                href={`#${item.toLowerCase().replace(" ", "-")}`}
-                                className={`hover:text-[#D4AF37] transition duration-300 ${isDarkMode ? "text-gray-300" : "text-gray-800"
+                                href={`#${item === "Dirección" ? "direccion" : item.toLowerCase().replace(" ", "-")}`}
+                                className={`hover:text-[#C19B22] transition duration-300 ${isDarkMode ? "text-gray-300" : "text-[#4a4035]"
                                     }`}
                             >
                                 {item}
@@ -47,14 +47,14 @@ export default function Navbar() {
                         ))}
                     </div>
                     <div className="flex items-center space-x-4">
-                        <div className="hidden md:block">
+                        <div className={`hidden md:block ${!isDarkMode ? "[&_a]:text-[#4a4035] [&_a:hover]:text-[#C19B22]" : ""}`}>
                             <SocialIcons />
                         </div>
                         <Button
                             onClick={toggleDarkMode}
                             variant="ghost"
                             size="icon"
-                            className={isDarkMode ? "text-white" : "text-gray-800"}
+                            className={isDarkMode ? "text-white" : "text-[#c8a482]"}
                         >
                             {isDarkMode ? <Sun className="h-5 w-5" /> : <Moon className="h-5 w-5" />}
                         </Button>

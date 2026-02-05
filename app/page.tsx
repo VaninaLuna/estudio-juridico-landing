@@ -114,7 +114,7 @@ function LawFirmLanding() {
       {/* Hero Section */}
       <section id="inicio" className="relative h-[80vh] flex items-center justify-center pt-16">
         <Image
-          src="/img/hero.jpg"
+          src="/img/hero.webp"
           alt="Elegant office interior"
           fill
           className="absolute z-0 object-cover object-[center_45%]"

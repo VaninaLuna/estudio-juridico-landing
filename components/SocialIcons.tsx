@@ -16,7 +16,7 @@ export default function SocialIcons({ light = false }: SocialIconsProps) {
                 href="https://www.linkedin.com/in/ver%C3%B3nica-pozzatto-978b7575/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className={`text-2xl ${useLight ? "text-white hover:text-[#D4AF37]" : "text-gray-800 hover:text-[#D4AF37]"}`}
+                className={`text-2xl ${useLight ? "text-white hover:text-[#c4a282]" : "text-gray-800 hover:text-[#c4a282]"}`}
                 aria-label="LinkedIn"
             >
                 <LinkedIn />
@@ -25,7 +25,7 @@ export default function SocialIcons({ light = false }: SocialIconsProps) {
                 href="https://www.instagram.com/estudio.juridico.mendoza/?igsh=MTBiZzQ3eHV1d2kyaA%3D%3D#"
                 target="_blank"
                 rel="noopener noreferrer"
-                className={`text-2xl ${useLight ? "text-white hover:text-[#D4AF37]" : "text-gray-800 hover:text-[#D4AF37]"}`}
+                className={`text-2xl ${useLight ? "text-white hover:text-[#c4a282]" : "text-gray-800 hover:text-[#c4a282]"}`}
                 aria-label="Instagram"
             >
                 <Instagram />
@@ -34,7 +34,7 @@ export default function SocialIcons({ light = false }: SocialIconsProps) {
                 href="https://wa.me/5492615095754"
                 target="_blank"
                 rel="noopener noreferrer"
-                className={`text-2xl ${useLight ? "text-white hover:text-[#D4AF37]" : "text-gray-800 hover:text-[#D4AF37]"}`}
+                className={`text-2xl ${useLight ? "text-white hover:text-[#c4a282]" : "text-gray-800 hover:text-[#c4a282]"}`}
                 aria-label="WhatsApp"
             >
                 <Phone />

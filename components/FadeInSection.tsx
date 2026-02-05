@@ -6,9 +6,10 @@ import { useEffect, useRef, useState } from "react"
 interface FadeInSectionProps {
     children: React.ReactNode
     delay?: number
+    className?: string
 }
 
-export const FadeInSection: React.FC<FadeInSectionProps> = ({ children, delay = 0 }) => {
+export const FadeInSection: React.FC<FadeInSectionProps> = ({ children, delay = 0, className = "" }) => {
     const [isVisible, setVisible] = useState(false)
     const domRef = useRef<HTMLDivElement>(null)
 
@@ -34,7 +35,7 @@ export const FadeInSection: React.FC<FadeInSectionProps> = ({ children, delay = 
             ref={domRef}
             className={`transition-all duration-1000 ease-out ${isVisible ? "opacity-100 translate-y-0 visibility-visible"
                 : "opacity-0 translate-y-20 visibility-hidden"
-                }`}
+                } ${className}`}
             style={{ transitionDelay: `${delay}ms` }}
         >
             {children}

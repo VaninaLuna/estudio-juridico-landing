@@ -39,7 +39,7 @@ export default function Navbar() {
                             <a
                                 key={item}
                                 href={`#${item === "Dirección" ? "direccion" : item.toLowerCase().replace(" ", "-")}`}
-                                className={`hover:text-[#C19B22] transition duration-300 ${isDarkMode ? "text-gray-300" : "text-[#4a4035]"
+                                className={`hover:text-[#c4a282] transition duration-300 ${isDarkMode ? "text-gray-300" : "text-[#4a4035]"
                                     }`}
                             >
                                 {item}
@@ -47,7 +47,7 @@ export default function Navbar() {
                         ))}
                     </div>
                     <div className="flex items-center space-x-4">
-                        <div className={`hidden md:block ${!isDarkMode ? "[&_a]:text-[#4a4035] [&_a:hover]:text-[#C19B22]" : ""}`}>
+                        <div className={`hidden md:block ${!isDarkMode ? "[&_a]:text-[#4a4035] [&_a:hover]:text-[#c4a282]" : ""}`}>
                             <SocialIcons />
                         </div>
                         <Button

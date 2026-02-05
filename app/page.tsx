@@ -117,6 +117,7 @@ function LawFirmLanding() {
           src="/img/hero.webp"
           alt="Elegant office interior"
           fill
+          sizes="100vw"
           className="absolute z-0 object-cover object-[center_45%]"
         />
         <div className="relative z-10 text-center text-white">
@@ -148,9 +149,7 @@ function LawFirmLanding() {
                 width={500}
                 height={500}
                 className="rounded-xl shadow-xl -mt-20"
-                priority
-                quality={100}
-                unoptimized
+                quality={75}
               />
             </div>
             <div className="md:w-1/2 md:pl-12">
@@ -189,7 +188,7 @@ function LawFirmLanding() {
                       alt="Veronica Pozzatto"
                       width={190}
                       height={190}
-                      className="rounded-full object-cover"
+                      className="rounded-full object-cover w-auto h-auto"
                     />
                   </div>
                   <h3 className="font-semibold">Veronica Pozzatto</h3>
@@ -202,7 +201,7 @@ function LawFirmLanding() {
                       alt="Alejandra Pezzuti"
                       width={190}
                       height={190}
-                      className="rounded-full object-cover"
+                      className="rounded-full object-cover w-auto h-auto"
                     />
                   </div>
                   <h3 className="font-semibold">Alejandra Pezzutti</h3>
